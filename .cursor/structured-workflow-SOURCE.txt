@@ -1,0 +1,4 @@
+source: https://github.com/kingdomseed/structured-workflow
+commit: 013a9192242b47f90dae5044ed323aab0e043f66
+installed: 2026-08-28
+layout: .cursor/skills/ (phase folders preserved; Cursor discovers SKILL.md recursively)
