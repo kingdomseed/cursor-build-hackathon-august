@@ -2,7 +2,7 @@ import { isAuthenticated, unauthorized } from "@/lib/auth";
 import { jsonResponse } from "@/lib/http";
 import { extractText, parseReceiptItems } from "@/lib/ocr";
 
-export const maxDuration = 60;
+export const maxDuration = 30;
 
 export async function POST(request: Request) {
   if (!isAuthenticated(request)) return unauthorized();
@@ -20,8 +20,14 @@ export async function POST(request: Request) {
   }
 
   const buffer = Buffer.from(await file.arrayBuffer());
-  const text = await extractText(buffer);
-  const items = parseReceiptItems(text);
+  const mimeType = file.type || "image/jpeg";
 
-  return jsonResponse({ items, text });
+  try {
+    const text = await extractText(buffer, mimeType);
+    const items = parseReceiptItems(text);
+    return jsonResponse({ items, text });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "OCR failed";
+    return jsonResponse({ error: message }, 502);
+  }
 }

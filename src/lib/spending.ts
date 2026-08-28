@@ -14,32 +14,29 @@ export type CategorySpend = {
 };
 
 export function aggregateSpending(transactions: Transaction[]): CategorySpend[] {
-  const byCategory = new Map<
+  const byCategory: Record<
     string,
-    { total: number; items: Map<string, number> }
-  >();
+    { total: number; items: Record<string, number> }
+  > = {};
 
   for (const tx of transactions) {
     if (tx.amount >= 0) continue;
 
-    const bucket = byCategory.get(tx.category) ?? {
-      total: 0,
-      items: new Map<string, number>(),
-    };
+    const bucket = byCategory[tx.category] ?? { total: 0, items: {} };
     bucket.total += Math.abs(tx.amount);
 
     for (const item of tx.items) {
-      bucket.items.set(item.name, (bucket.items.get(item.name) ?? 0) + item.price);
+      bucket.items[item.name] = (bucket.items[item.name] ?? 0) + item.price;
     }
 
-    byCategory.set(tx.category, bucket);
+    byCategory[tx.category] = bucket;
   }
 
-  return [...byCategory.entries()]
+  return Object.entries(byCategory)
     .map(([category, data]) => ({
       category,
       total: data.total,
-      items: [...data.items.entries()]
+      items: Object.entries(data.items)
         .map(([name, total]) => ({ name, total }))
         .sort((a, b) => b.total - a.total),
     }))

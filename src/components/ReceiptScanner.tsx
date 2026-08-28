@@ -105,8 +105,11 @@ export function ReceiptScanner({
       const result = await api.ocr(blob);
       setItems(result.items);
       if (result.items.length === 0) {
+        const snippet = result.text?.trim().slice(0, 280);
         setError(
-          "No priced line items found. Try a clearer photo of the receipt."
+          snippet
+            ? `No priced line items found. OCR text started with: “${snippet}”`
+            : "No priced line items found. Try a clearer photo of the receipt."
         );
       }
     } catch (err) {
