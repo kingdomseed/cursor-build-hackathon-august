@@ -1,0 +1,125 @@
+{
+  "accounts": [
+    {
+      "id": "acc-commerzbank-001",
+      "bankName": "Commerzbank",
+      "iban": "DE89 3704 0044 0532 0130 00",
+      "balance": 3412.18,
+      "currency": "EUR",
+      "accountType": "Girokonto"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-001",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "REWE Supermarkt",
+      "amount": -9.47,
+      "date": "2026-08-26",
+      "category": "Groceries",
+      "items": [
+        { "name": "Äpfel", "price": 2.49 },
+        { "name": "Orangensaft", "price": 1.99 },
+        { "name": "Milch", "price": 1.29 },
+        { "name": "Brot", "price": 1.79 },
+        { "name": "Butter", "price": 1.91 }
+      ]
+    },
+    {
+      "id": "tx-002",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "Starbucks",
+      "amount": -6.8,
+      "date": "2026-08-25",
+      "category": "Dining",
+      "items": [
+        { "name": "Latte Macchiato", "price": 4.3 },
+        { "name": "Muffin", "price": 2.5 }
+      ]
+    },
+    {
+      "id": "tx-003",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "H&M",
+      "amount": -49.95,
+      "date": "2026-08-24",
+      "category": "Shopping",
+      "items": [
+        { "name": "Jeans", "price": 34.99 },
+        { "name": "T-Shirt", "price": 14.96 }
+      ]
+    },
+    {
+      "id": "tx-004",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "Edeka",
+      "amount": -22.3,
+      "date": "2026-08-22",
+      "category": "Groceries",
+      "items": [
+        { "name": "Käse", "price": 3.49 },
+        { "name": "Wein", "price": 6.99 },
+        { "name": "Pasta", "price": 1.29 },
+        { "name": "Tomaten", "price": 2.49 },
+        { "name": "Olivenöl", "price": 8.04 }
+      ]
+    },
+    {
+      "id": "tx-005",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "Shell Tankstelle",
+      "amount": -74.5,
+      "date": "2026-08-21",
+      "category": "Transport",
+      "items": [
+        { "name": "Kraftstoff Super E10", "price": 74.5 }
+      ]
+    },
+    {
+      "id": "tx-006",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "Netflix",
+      "amount": -15.99,
+      "date": "2026-08-20",
+      "category": "Subscriptions",
+      "items": [
+        { "name": "Streaming Abo", "price": 15.99 }
+      ]
+    },
+    {
+      "id": "tx-007",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "Rossmann",
+      "amount": -12.4,
+      "date": "2026-08-18",
+      "category": "Health",
+      "items": [
+        { "name": "Shampoo", "price": 4.49 },
+        { "name": "Zahnpasta", "price": 2.99 },
+        { "name": "Duschgel", "price": 4.92 }
+      ]
+    },
+    {
+      "id": "tx-008",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "McDonald's",
+      "amount": -8.99,
+      "date": "2026-08-17",
+      "category": "Dining",
+      "items": [
+        { "name": "Big Mac", "price": 5.19 },
+        { "name": "Pommes", "price": 2.29 },
+        { "name": "Cola", "price": 1.51 }
+      ]
+    },
+    {
+      "id": "tx-009",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "Lidl",
+      "amount": -18.64,
+      "date": "2026-08-28",
+      "category": "Groceries",
+      "items": []
+    }
+  ]
+}
