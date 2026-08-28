@@ -6,8 +6,8 @@ import { FormEvent, useEffect, useState } from "react";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("demo@belegguru.de");
-  const [password, setPassword] = useState("beleg1234");
+  const [email, setEmail] = useState("demo@geniefinanz.de");
+  const [password, setPassword] = useState("genie1234");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -22,6 +22,7 @@ export default function LoginPage() {
     try {
       const result = await api.login(email, password);
       setToken(result.token);
+      await api.resetDemoReceipts();
       router.replace("/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed");
@@ -35,9 +36,9 @@ export default function LoginPage() {
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
         <div className="mb-8 text-center">
           <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-teal-500 text-lg font-bold text-white">
-            B
+            G
           </div>
-          <h1 className="text-2xl font-semibold text-navy-900">BelegGuru</h1>
+          <h1 className="text-2xl font-semibold text-navy-900">GenieFinanz</h1>
           <p className="mt-1 text-sm text-slate-500">
             Map receipt line items to your bank transactions
           </p>
@@ -85,8 +86,8 @@ export default function LoginPage() {
         </form>
 
         <p className="mt-6 rounded-lg bg-slate-50 px-3 py-2 text-center text-xs text-slate-500">
-          Prototype login: <span className="font-medium">demo@belegguru.de</span>{" "}
-          / <span className="font-medium">beleg1234</span>
+          Prototype login: <span className="font-medium">demo@geniefinanz.de</span>{" "}
+          / <span className="font-medium">genie1234</span>
         </p>
       </div>
     </main>

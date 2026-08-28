@@ -1,8 +1,8 @@
 import { jsonResponse } from "./http";
 
-export const DEMO_EMAIL = "demo@belegguru.de";
-export const DEMO_PASSWORD = "beleg1234";
-export const SESSION_TOKEN = "belegguru-demo-session";
+export const DEMO_EMAIL = "demo@geniefinanz.de";
+export const DEMO_PASSWORD = "genie1234";
+export const SESSION_TOKEN = "geniefinanz-demo-session";
 
 export function credentialsMatch(email: string, password: string) {
   return email === DEMO_EMAIL && password === DEMO_PASSWORD;

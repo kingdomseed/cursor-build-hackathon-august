@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BelegGuru",
+  title: "GenieFinanz",
   description: "Map receipt items to bank transactions",
 };
 

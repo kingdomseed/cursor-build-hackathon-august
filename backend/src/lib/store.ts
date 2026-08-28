@@ -14,6 +14,7 @@ export type Transaction = {
   date: string;
   category: string;
   items: ReceiptItem[];
+  resetOnSession?: boolean;
 };
 
 export type Account = {

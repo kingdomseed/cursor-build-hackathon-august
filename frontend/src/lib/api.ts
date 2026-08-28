@@ -1,5 +1,5 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
-const TOKEN_KEY = "belegguru_token";
+const TOKEN_KEY = "geniefinanz_token";
 
 export function getToken() {
   if (typeof window === "undefined") return null;
@@ -68,6 +68,11 @@ export const api = {
         body: JSON.stringify({ items }),
       }
     );
+  },
+  resetDemoReceipts() {
+    return request<{ ok: boolean }>("/api/demo/reset-receipts", {
+      method: "POST",
+    });
   },
   ocr(file: Blob, filename = "receipt.jpg") {
     const body = new FormData();
