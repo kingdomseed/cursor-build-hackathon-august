@@ -4,7 +4,7 @@
       "id": "acc-commerzbank-001",
       "bankName": "Commerzbank",
       "iban": "DE89 3704 0044 0532 0130 00",
-      "balance": 3412.18,
+      "balance": 3344.28,
       "currency": "EUR",
       "accountType": "Girokonto"
     }
@@ -18,11 +18,26 @@
       "date": "2026-08-26",
       "category": "Groceries",
       "items": [
-        { "name": "Äpfel", "price": 2.49 },
-        { "name": "Orangensaft", "price": 1.99 },
-        { "name": "Milch", "price": 1.29 },
-        { "name": "Brot", "price": 1.79 },
-        { "name": "Butter", "price": 1.91 }
+        {
+          "name": "Äpfel",
+          "price": 2.49
+        },
+        {
+          "name": "Orangensaft",
+          "price": 1.99
+        },
+        {
+          "name": "Milch",
+          "price": 1.29
+        },
+        {
+          "name": "Brot",
+          "price": 1.79
+        },
+        {
+          "name": "Butter",
+          "price": 1.91
+        }
       ]
     },
     {
@@ -33,8 +48,14 @@
       "date": "2026-08-25",
       "category": "Dining",
       "items": [
-        { "name": "Latte Macchiato", "price": 4.3 },
-        { "name": "Muffin", "price": 2.5 }
+        {
+          "name": "Latte Macchiato",
+          "price": 4.3
+        },
+        {
+          "name": "Muffin",
+          "price": 2.5
+        }
       ]
     },
     {
@@ -45,8 +66,14 @@
       "date": "2026-08-24",
       "category": "Shopping",
       "items": [
-        { "name": "Jeans", "price": 34.99 },
-        { "name": "T-Shirt", "price": 14.96 }
+        {
+          "name": "Jeans",
+          "price": 34.99
+        },
+        {
+          "name": "T-Shirt",
+          "price": 14.96
+        }
       ]
     },
     {
@@ -57,11 +84,26 @@
       "date": "2026-08-22",
       "category": "Groceries",
       "items": [
-        { "name": "Käse", "price": 3.49 },
-        { "name": "Wein", "price": 6.99 },
-        { "name": "Pasta", "price": 1.29 },
-        { "name": "Tomaten", "price": 2.49 },
-        { "name": "Olivenöl", "price": 8.04 }
+        {
+          "name": "Käse",
+          "price": 3.49
+        },
+        {
+          "name": "Wein",
+          "price": 6.99
+        },
+        {
+          "name": "Pasta",
+          "price": 1.29
+        },
+        {
+          "name": "Tomaten",
+          "price": 2.49
+        },
+        {
+          "name": "Olivenöl",
+          "price": 8.04
+        }
       ]
     },
     {
@@ -72,7 +114,10 @@
       "date": "2026-08-21",
       "category": "Transport",
       "items": [
-        { "name": "Kraftstoff Super E10", "price": 74.5 }
+        {
+          "name": "Kraftstoff Super E10",
+          "price": 74.5
+        }
       ]
     },
     {
@@ -83,7 +128,10 @@
       "date": "2026-08-20",
       "category": "Subscriptions",
       "items": [
-        { "name": "Streaming Abo", "price": 15.99 }
+        {
+          "name": "Streaming Abo",
+          "price": 15.99
+        }
       ]
     },
     {
@@ -94,9 +142,18 @@
       "date": "2026-08-18",
       "category": "Health",
       "items": [
-        { "name": "Shampoo", "price": 4.49 },
-        { "name": "Zahnpasta", "price": 2.99 },
-        { "name": "Duschgel", "price": 4.92 }
+        {
+          "name": "Shampoo",
+          "price": 4.49
+        },
+        {
+          "name": "Zahnpasta",
+          "price": 2.99
+        },
+        {
+          "name": "Duschgel",
+          "price": 4.92
+        }
       ]
     },
     {
@@ -107,9 +164,18 @@
       "date": "2026-08-17",
       "category": "Dining",
       "items": [
-        { "name": "Big Mac", "price": 5.19 },
-        { "name": "Pommes", "price": 2.29 },
-        { "name": "Cola", "price": 1.51 }
+        {
+          "name": "Big Mac",
+          "price": 5.19
+        },
+        {
+          "name": "Pommes",
+          "price": 2.29
+        },
+        {
+          "name": "Cola",
+          "price": 1.51
+        }
       ]
     },
     {
@@ -121,6 +187,38 @@
       "category": "Groceries",
       "resetOnSession": true,
       "items": []
+    },
+    {
+      "id": "tx-010",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "Deutsche Bahn",
+      "amount": -49,
+      "date": "2026-08-15",
+      "category": "Transport",
+      "items": [
+        {
+          "name": "Deutschland-Ticket",
+          "price": 49
+        }
+      ]
+    },
+    {
+      "id": "tx-011",
+      "accountId": "acc-commerzbank-001",
+      "merchant": "Metzgerei Huber",
+      "amount": -18.9,
+      "date": "2026-08-19",
+      "category": "Groceries",
+      "items": [
+        {
+          "name": "Rindfleisch",
+          "price": 14.9
+        },
+        {
+          "name": "Bratwurst",
+          "price": 4
+        }
+      ]
     }
   ]
 }

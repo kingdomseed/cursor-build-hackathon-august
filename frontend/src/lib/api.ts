@@ -50,9 +50,12 @@ export const api = {
   accounts() {
     return request<{ accounts: import("./types").Account[] }>("/api/accounts");
   },
-  transactions(accountId: string) {
+  transactions(accountId?: string) {
+    const query = accountId
+      ? `?accountId=${encodeURIComponent(accountId)}`
+      : "";
     return request<{ transactions: import("./types").Transaction[] }>(
-      `/api/transactions?accountId=${encodeURIComponent(accountId)}`
+      `/api/transactions${query}`
     );
   },
   transaction(id: string) {

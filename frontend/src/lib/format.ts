@@ -21,3 +21,12 @@ export const categoryColors: Record<string, string> = {
   Subscriptions: "bg-rose-50 text-rose-700",
   Health: "bg-teal-50 text-teal-700",
 };
+
+export const categoryBarColors: Record<string, string> = {
+  Groceries: "bg-emerald-500",
+  Dining: "bg-orange-500",
+  Shopping: "bg-violet-500",
+  Transport: "bg-sky-500",
+  Subscriptions: "bg-rose-500",
+  Health: "bg-teal-500",
+};
