@@ -1,10 +1,6 @@
 import { isAuthenticated, unauthorized } from "@/lib/auth";
-import { jsonResponse, optionsResponse } from "@/lib/http";
+import { jsonResponse } from "@/lib/http";
 import { readStore, writeStore, type ReceiptItem } from "@/lib/store";
-
-export function OPTIONS() {
-  return optionsResponse();
-}
 
 type Params = { params: { id: string } };
 

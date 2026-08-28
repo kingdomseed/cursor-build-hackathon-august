@@ -1,10 +1,8 @@
 import { isAuthenticated, unauthorized } from "@/lib/auth";
-import { jsonResponse, optionsResponse } from "@/lib/http";
+import { jsonResponse } from "@/lib/http";
 import { extractText, parseReceiptItems } from "@/lib/ocr";
 
-export function OPTIONS() {
-  return optionsResponse();
-}
+export const maxDuration = 60;
 
 export async function POST(request: Request) {
   if (!isAuthenticated(request)) return unauthorized();
