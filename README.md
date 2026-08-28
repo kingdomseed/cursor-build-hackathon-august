@@ -54,4 +54,6 @@ flowchart TB
 
 The OpenAPI file is the contract. A copy lives at schemas/plaid-openapi.yml. You still need a Plaid app, Link, and an access token before anything comes back.
 
+Six people are building it: Ahmed on product, Osama on backend, Salman on frontend, Wentan on compliance, Jason on data and setup, Nikhil on vision.
+
 Hackathon. First note on 17 Aug 2026. This write-up on 28 Aug 2026. Repo exists. App is not built yet.
