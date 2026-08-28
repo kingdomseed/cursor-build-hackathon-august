@@ -1,10 +1,10 @@
-Sync transactions from more than one account, then show where the money went.
+GenieFinanz syncs transactions from more than one account, then shows where the money went. Personal accounts and business ones, same engine.
 
 You do that by attaching proof: receipts, invoices, anything else that breaks a charge into what you actually bought.
 
 A checking account will show one payment to a credit card. That number does not tell you what you bought. The card has the store names. The receipt has the line items. This app keeps those next to each other.
 
-I do not want another budget app. I want to open a charge and see the coffee, the milk, the tax.
+I do not want another budget app. I want to open a charge and see the coffee, the milk, the tax. A business wants the same thing: open a charge and see the client lunch, the VAT, the project it sits in.
 
 It pulls transactions from the accounts you connect and keeps pulling as new ones land. You attach a photo or a file to a charge. The app shows the charge and the itemized list together.
 
