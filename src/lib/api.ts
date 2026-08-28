@@ -77,12 +77,4 @@ export const api = {
       method: "POST",
     });
   },
-  ocr(file: Blob, filename = "receipt.jpg") {
-    const body = new FormData();
-    body.append("image", file, filename);
-    return request<{ items: import("./types").ReceiptItem[]; text: string }>(
-      "/api/ocr",
-      { method: "POST", body }
-    );
-  },
 };

@@ -1,27 +1,25 @@
 import { isAuthenticated, unauthorized } from "@/lib/auth";
 import { jsonResponse } from "@/lib/http";
-import { extractText, parseReceiptItems } from "@/lib/ocr";
-
-export const maxDuration = 60;
+import { parseReceiptItems } from "@/lib/ocr";
 
 export async function POST(request: Request) {
   if (!isAuthenticated(request)) return unauthorized();
 
-  let formData: FormData;
+  let body: unknown;
   try {
-    formData = await request.formData();
+    body = await request.json();
   } catch {
-    return jsonResponse({ error: "Expected multipart form data" }, 400);
+    return jsonResponse({ error: "Expected JSON { text }" }, 400);
   }
 
-  const file = formData.get("image") ?? formData.get("file");
-  if (!(file instanceof File)) {
-    return jsonResponse({ error: "Missing image file" }, 400);
+  if (
+    typeof body !== "object" ||
+    body === null ||
+    typeof (body as { text?: unknown }).text !== "string"
+  ) {
+    return jsonResponse({ error: "Expected JSON { text }" }, 400);
   }
 
-  const buffer = Buffer.from(await file.arrayBuffer());
-  const text = await extractText(buffer);
-  const items = parseReceiptItems(text);
-
-  return jsonResponse({ items, text });
+  const text = (body as { text: string }).text;
+  return jsonResponse({ items: parseReceiptItems(text), text });
 }

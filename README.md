@@ -27,5 +27,5 @@ No separate frontend/backend projects are needed.
 ## Notes
 
 - Dummy data lives in `data/transactions.json` (no database).
-- OCR uses `tesseract.js` (`POST /api/ocr`). The first scan can take a while.
+- OCR runs `tesseract.js` in the browser. The first scan downloads German traineddata, then reuses the worker.
 - Scanned items are written back via `PATCH /api/transactions/:id`.

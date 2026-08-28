@@ -1,15 +1,7 @@
-import { createWorker } from "tesseract.js";
-import type { ReceiptItem } from "./store";
+import type { ReceiptItem } from "./types";
 
 const SKIP_PATTERN =
   /summe|total|zwischensumme|mwst|steuer|datum|uhrzeit|kasse|filiale|danke|thank|visa|mastercard|girocard|ec-karte|barzahlung|wechselgeld|betrag|zahlung|bon-nr|steuernr|ust-id|tel\.|www\.|http/i;
-
-export async function extractText(image: Buffer): Promise<string> {
-  const worker = await createWorker("deu+eng");
-  const { data } = await worker.recognize(image);
-  await worker.terminate();
-  return data.text ?? "";
-}
 
 export function parseReceiptItems(text: string): ReceiptItem[] {
   const items: ReceiptItem[] = [];

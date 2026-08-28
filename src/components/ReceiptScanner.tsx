@@ -1,7 +1,8 @@
 "use client";
 
-import { api } from "@/lib/api";
 import { formatEUR } from "@/lib/format";
+import { parseReceiptItems } from "@/lib/ocr";
+import { recognizeReceipt } from "@/lib/ocr-client";
 import type { ReceiptItem } from "@/lib/types";
 import { useEffect, useRef, useState } from "react";
 
@@ -102,9 +103,10 @@ export function ReceiptScanner({
     setBusy(true);
     setError("");
     try {
-      const result = await api.ocr(blob);
-      setItems(result.items);
-      if (result.items.length === 0) {
+      const text = await recognizeReceipt(blob);
+      const nextItems = parseReceiptItems(text);
+      setItems(nextItems);
+      if (nextItems.length === 0) {
         setError(
           "No priced line items found. Try a clearer photo of the receipt."
         );
